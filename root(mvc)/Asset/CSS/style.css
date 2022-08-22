@@ -1,0 +1,38 @@
+body{
+    background: linear-gradient(45deg, #4e65ff, #92effd);
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+body.visible {
+    opacity: 1;
+    transition: opacity 1s;
+}
+.box{
+    position: relative;
+    /* background-color: white; */
+    width: 90%;
+    margin: auto;
+    /* display: flex; */
+    /* text-align: center; */
+    /* align-items: center; */
+    /* align-content: center; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.box * {
+    margin: auto;
+}
+.btn{
+    /* display: flex; */
+    /* border: 10px solid yellow; */
+    width: auto;
+    background: transparent;
+    margin-bottom: 5px;
+    border-radius: 15px;
+
+}
+
+/* JS */
+/* window.onload = function() {
+    document.querySelector('body').classList.toggle('visible');
+}; */

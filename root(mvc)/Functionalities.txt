@@ -1,0 +1,35 @@
+//  This is the List of Functionalities  //
+# check whether username is available or not using JS.
+
+//  This is the List of Admin Functionalities  //
+# display users list
+# user registration
+# edit own profile
+
+
+// To be completed (or optimized) //
+# add admin & editors
+# file upload  - -
+# password hashing
+# can update/delete users
+# can check & approve OFFICIAL acc registrations
+# viewReq
+
+
+
+// Bugs //
+
+# an user is never deleted, add active/de-active status to Users table in DB
+
+
+
+
+
+
+// was working on //
+(starred *****)
+
+
+
+
+

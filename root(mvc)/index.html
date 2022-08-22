@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <title>Fund Lagbe</title>
+    <script type="text/javascript">
+      let username = "";
+      getUsername();
+
+      // function changeElementAttribute(elemName, attName, attValue) {
+      //   let x = document.getElementById(elemName);
+      //   x.setAttribute(attName, attValue);
+      // }
+
+      function checkCookie(cookieName) {
+        var cookieArr = document.cookie.split(";");
+        for (var i = 0; i < cookieArr.length; i++) {
+          var cookiePair = cookieArr[i].split("=");
+          if (cookieName == cookiePair[0].trim()) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      function getUsername() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "redirect.php?getUsername");
+        xhttp.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        );
+        xhttp.send();
+
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            // let username = JSON.parse(this.responseText);
+            username = this.responseText;
+          }
+        };
+      }
+
+      function checkLoginStatus() {
+        if (checkCookie("session")) {
+          // If an User is signed in
+
+          // document.getElementById("span1").innerHTML = `
+          // <button onclick="location.href='redirect.php?home'">Home</button>
+          // <button onclick="location.href='redirect.php?logout'">Logout</button>
+          // `;
+
+          // alert(900);
+          document.getElementById("spanPP").innerHTML =
+            `
+          <img id="profilePhoto" src="Asset/Storage/profilePhotos/` +
+            username +
+            `.png" />
+          `;
+          // alert("done");
+          // alert(username);
+
+          document.getElementById("a1").innerHTML = "Home";
+          document
+            .getElementById("a1")
+            .setAttribute("href", "redirect.php?home");
+          document
+            .getElementById("i1")
+            .setAttribute("src", "Asset/Icons/home.png");
+
+          document.getElementById("a2").innerHTML = "Logout";
+          document
+            .getElementById("a2")
+            .setAttribute("href", "redirect.php?logout");
+          document
+            .getElementById("i2")
+            .setAttribute("src", "Asset/Icons/logout.png");
+          // . . . //
+        } else {
+          // If no User is signed in
+
+          // document.getElementById("span1").innerHTML = `
+          // <button onclick="location.href='redirect.php?register'">Register</button>
+          // <button onclick="location.href='redirect.php?login'">Login</button>
+          // `;
+
+          document.getElementById("a1").innerHTML = "Register";
+          document
+            .getElementById("a1")
+            .setAttribute("href", "redirect.php?register");
+          document
+            .getElementById("i1")
+            .setAttribute("src", "Asset/Icons/register.png");
+
+          document.getElementById("a2").innerHTML = "Login";
+          document
+            .getElementById("a2")
+            .setAttribute("href", "redirect.php?login");
+          document
+            .getElementById("i2")
+            .setAttribute("src", "Asset/Icons/login.png");
+          // . . . //
+        }
+      }
+
+      function menuDD() {
+        let menuToggle = document.querySelector(".menuToggle");
+        let menuDD = document.querySelector(".menuDD");
+
+        menuToggle.onclick = function () {
+          menuDD.classList.toggle("active");
+        };
+      }
+    </script>
+
+    <link rel="stylesheet" href="Asset/CSS/menuDD.css" />
+    <link rel="stylesheet" href="Asset/CSS/style.css" />
+    <link rel="stylesheet" href="Asset/CSS/index.css" />
+  </head>
+  <body>
+    <div class="box">
+      <div>
+        <h1>This is the new Index Page!!</h1>
+        <p>You will see fund-raising posts here!.</p>
+      </div>
+    </div>
+
+    <div class="menuDD">
+      <div class="userBx">
+        <div class="imgBx">
+          <span id="spanPP"></span>
+        </div>
+        <p class="text">Welcome!</p>
+      </div>
+      <div class="menuToggle"></div>
+      <ul class="menu">
+        <li>
+          <img id="i1" src="" alt="" />
+          <a id="a1" href=""></a>
+        </li>
+        <li>
+          <img id="i2" src="" alt="" />
+          <a id="a2" href=""></a>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    window.onload = function () {
+      checkLoginStatus();
+      document.querySelector("body").classList.toggle("visible");
+    };
+    menuDD();
+  </script>
+</html>

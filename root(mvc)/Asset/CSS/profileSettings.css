@@ -1,0 +1,77 @@
+.divImage{
+    position: relative;
+    width: 100px;
+    margin: auto;
+    /* background-color: black; */
+}
+
+.divForm {
+    position: relative;
+    width: 380px;
+    height: 460px;
+    /* background-color: yellowgreen; */
+    /* margin: auto; */
+}
+/* .divForm form table tbody tr td input{
+    border: 2px solid orange;
+    width: 242px;
+    height: 22px;
+    align-items: center;
+    text-align: center;
+} */
+
+/* #tBody1 tr td{
+    position: relative;
+    width: 500px;
+    
+} */
+
+/* #tBody1 tr td input{ */
+.divForm form table tbody tr td input{
+    width: 240px;
+    background: transparent;
+    text-align: right;
+}
+#temp{
+    /* border: 3px solid green; */
+    padding: 0 0 0 20px;
+    /* text-align: right; */
+}
+
+
+.btn{
+    display: flex;
+    /* border: 10px solid yellow; */
+    width: auto;
+    background: transparent;
+    margin-bottom: 5px;
+
+}
+.tbody tr td {
+    /* margin: 10px; */
+    padding: 10px;
+}
+
+
+
+/* .divForm form table tr td{
+    margin: auto;
+    margin-left: 10px;
+    border: 3px solid black;
+} */
+
+#profilePhoto {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    margin: auto;
+    /* align-items: center; */
+}
+/* 
+.box div form{
+    position: relative;
+    text-align: center;
+    margin: auto;
+} */
