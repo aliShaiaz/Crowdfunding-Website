@@ -294,6 +294,12 @@ function submitNewPassword()
     // echo $password;
 }
 
+function submitGetPosts()
+{
+    // echo 'asdf';
+    echo json_encode(POSTS_getAllPosts());
+}
+
 
 
 
@@ -328,6 +334,11 @@ elseif (isset($_GET['loginSubmit'])) {
 } elseif (isset($_REQUEST['getUsername'])) {
     submitGetUsername();
     // echo false;
+}
+
+// . . . POSTS . . . //
+elseif (isset($_REQUEST['getPosts'])) {
+    submitGetPosts();
 }
 
 // . . . EDIT/DELETE REQUESTS . . . //
@@ -379,7 +390,25 @@ elseif (isset($_REQUEST['listUsers'])) {
 }
 // . . . View Requests . . . //
 elseif (isset($_REQUEST['viewRequests'])) {
-    VIEW_requests();
+    // VIEW_requests();
+    ADMIN_displayRequestList();
+} elseif (isset($_REQUEST['getReqList'])) {
+    echo json_encode(REQ_getAllRequests());
+    // echo 'here';
+} elseif (isset($_REQUEST['approve'])) {
+    $reqID = $_REQUEST['approve'];
+    $req = REQ_getRequestInfo($reqID);
+
+    POSTS_approve($req['postID']);
+    REQ_approve($req['postID']);
+    header('location: redirect.php?viewRequests');
+} elseif (isset($_REQUEST['refuse'])) {
+    $reqID = $_REQUEST['refuse'];
+    $req = REQ_getRequestInfo($reqID);
+    
+    POSTS_refuse($req['postID']);
+    REQ_refuse($req['postID']);
+    header('location: redirect.php?viewRequests');
 }
 
 

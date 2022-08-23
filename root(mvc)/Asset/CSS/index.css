@@ -10,13 +10,59 @@ body.visible {
 }
 .box{
     /* background-color: white; */
-    width: 90%;
+    width: 70%;
     margin: 200 auto;
-    display: flex;
+    /* display: flex; */
     text-align: center;
     /* align-items: center; */
     /* align-content: center; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.box div div{   /* POSTS */
+    padding: 20px;
+    position: relative;
+    /* opacity: .2; */
+    /* background-color: #4e65ff; */
+    /* height: 100px; */
+
+}
+.box div{       /* POST CONTAINER */
+    position: relative;
+    border-radius: 25px;
+    margin: 30px;
+    /* background-color: green; */
+}
+
+#dialogue{
+    /* background-color: grey; */
+    align-items: center;
+}
+
+.postPhoto{
+    /* height: 270px;
+    width: 480px; */
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 45px;
+    padding: 20px 0;
+}
+
+.flow{
+    background: transparent;
+    text-align: center;
+    /* size: 100px; */
+    padding: 10px;
+    font-size: 10px;
+}
+.inv{
+    background: transparent;
+    text-align: center;
+    /* size: 100px; */
+    padding: 20px 20px;
+    font-size: 20px;
+
 }
 
 /* JS */
