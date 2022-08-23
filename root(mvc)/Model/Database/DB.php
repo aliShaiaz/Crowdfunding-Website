@@ -128,6 +128,12 @@ function DB_updateUser($userID, $username, $password, $userType, $firstName, $la
     return MySQL_runSQL($sql);
 }
 
+function DB_resetPassword($username, $password)
+{
+    $sql = "UPDATE users SET password='$password' WHERE username = '$username';";
+    return MySQL_runSQL($sql);
+}
+
 function DB_updateActiveStatus($username, $activeStatus)
 {
     $sql = "UPDATE users SET activeStatus='$activeStatus' WHERE username = '$username';";

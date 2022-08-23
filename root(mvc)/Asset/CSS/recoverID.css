@@ -1,0 +1,14 @@
+.left{
+    text-align: right;
+}
+.right{
+    text-align: left;
+}
+.submit{
+    text-align: center;
+}
+p{
+    text-align: center;
+    color: #555;
+    opacity: .8;
+}

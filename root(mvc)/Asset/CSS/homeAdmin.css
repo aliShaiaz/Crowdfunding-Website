@@ -1,5 +1,13 @@
-h1 {
-    /* text-align: center; */
-    /* background-color: black; */
-    
+#mainDiv{
+    /* all: none; */
+    /* background-color: yellow; */
+    text-align: center;
+    margin-top: 20;
+
 }
+#viewReqBtn{
+    margin-top: 10px;
+    padding: 20px;
+}
+
+

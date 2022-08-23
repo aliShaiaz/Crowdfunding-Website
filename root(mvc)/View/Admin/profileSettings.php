@@ -28,28 +28,28 @@ function VIEW_profileSettings()
                             let row = tBody1.insertRow();
 
                             row.insertCell(0).innerHTML = key + " ";
-                            row.insertCell(1).innerHTML = `<input type="date" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
+                            row.insertCell(1).innerHTML = `<input class="inpTxt" type="date" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
                         } else if (key == 'password') {
                             let row = tBody1.insertRow();
 
                             row.insertCell(0).innerHTML = key + " ";
-                            row.insertCell(1).innerHTML = `<input type="password" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
+                            row.insertCell(1).innerHTML = `<input class="inpTxt" type="password" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
                         } else if (key == 'username' || key == 'empRole' || key == 'gender' || key == 'userType') {
                             let row = tBody1.insertRow();
 
                             row.insertCell(0).innerHTML = key + " ";
-                            row.insertCell(1).innerHTML = `<input type="text" name="` + key + `" id="` + key + `" value="` + user[key] + `" readonly>`;
+                            row.insertCell(1).innerHTML = `<input class="inpTxt" type="text" name="` + key + `" id="` + key + `" value="` + user[key] + `" readonly>`;
                         } else if (key == 'phone') {
 
                             let row = tBody1.insertRow();
 
                             row.insertCell(0).innerHTML = key + " ";
-                            row.insertCell(1).innerHTML = `<input type="tel" pattern="[0][1][3-9][0-9]{8}" placeholder="01XXXXXXXXX" required name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
+                            row.insertCell(1).innerHTML = `<input class="inpTxt" type="tel" pattern="[0][1][3-9][0-9]{8}" placeholder="01XXXXXXXXX" required name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
                         } else {
                             let row = tBody1.insertRow();
 
                             row.insertCell(0).innerHTML = key + " ";
-                            row.insertCell(1).innerHTML = `<input type="text" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
+                            row.insertCell(1).innerHTML = `<input class="inpTxt" type="text" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
                         }
                     }
                     // if (user[key] != null && key != "activeStatus") {
@@ -57,13 +57,13 @@ function VIEW_profileSettings()
                     //         let row = tBody1.insertRow();
 
                     //         row.insertCell(0).innerHTML = key + " ";
-                    //         row.insertCell(1).innerHTML = `<input type="email" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
+                    //         row.insertCell(1).innerHTML = `<input class="inpTxt" type="email" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
                     //     }
                     //     elseif(key == 'dob') {
                     //         let row = tBody1.insertRow();
 
                     //         row.insertCell(0).innerHTML = key + " ";
-                    //         row.insertCell(1).innerHTML = `<input type="date" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
+                    //         row.insertCell(1).innerHTML = `<input class="inpTxt" type="date" name="` + key + `" id="` + key + `" value="` + user[key] + `">`;
                     //     }
                     // }
                 })

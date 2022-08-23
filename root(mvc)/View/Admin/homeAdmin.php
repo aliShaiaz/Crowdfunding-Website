@@ -59,13 +59,13 @@ function VIEW_homeAdmin()
     </head>
 
     <body>
-        <div class="box">
+        <div id="mainDiv" class="box">
 
             <h1>
                 This is your Homepage <br />
             </h1>
 
-            <button class="btn" onclick="location.href='redirect.php?viewRequests'">View Requests</button>
+            <button id="viewReqBtn" class="btn" onclick="location.href='redirect.php?viewRequests'">View Requests</button>
 
 
             <!-- <input type="button" onclick="location.href='manageAdmin.php'" value="Manage Admin"> -->

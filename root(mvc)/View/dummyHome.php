@@ -12,6 +12,7 @@ function VIEW_dummyHome()
     <body>
         <h1>Welcome <?php echo $_SESSION['userInfo']['username'] ?>,</h1>
         This is the <?php echo $_SESSION['userInfo']['userType'] ?> Homepage.<br>
+        <button onclick="location.href='redirect.php?logout'">Logout</button>
 
     </body>
 

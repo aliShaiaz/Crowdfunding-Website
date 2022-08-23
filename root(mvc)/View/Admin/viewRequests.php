@@ -1,12 +1,24 @@
-<html>
+<?php
 
-<head>
-    <title>View Request</title>
-    <link rel="stylesheet" href="Asset/CSS/style.css">
-</head>
+function VIEW_requests()
+{
+?>
+    <html>
 
-<body>
+    <head>
+        <title>View Request</title>
+        <link rel="stylesheet" href="Asset/CSS/style.css">
+    </head>
 
-</body>
+    <body>
 
-</html>
+    </body>
+    <script>
+        window.onload = function() {
+            document.querySelector('body').classList.toggle('visible');
+        };
+    </script>
+
+    </html>
+<?php
+}

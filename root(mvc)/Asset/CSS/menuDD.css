@@ -8,15 +8,16 @@
     background: #fff;
     display: flex;
     justify-content: space-between;
-    transition: height 0.5s, width 0.5s;
+    opacity: .6;
+    transition: height 0.5s, width 0.5s, opacity .5s;
     transition-delay: 0s, .15s;
     overflow: hidden;
 }
 .menuDD.active{
     height: 300px;
     width: 200px;
-
-    transition: width 0.5s, height 0.5s;
+    opacity: 1;
+    transition: width 0.5s, height 0.5s, opacity .5s;
     transition-delay: 0s, .15s;
 }
 .menuDD .userBx{

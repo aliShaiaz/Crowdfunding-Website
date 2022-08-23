@@ -8,11 +8,13 @@ require_once('View/Admin/usersList.php');
 require_once('View/Admin/profileSettings.php');
 require_once('View/Admin/updateUser.php');
 require_once('View/Admin/viewRequests.php');
+require_once('View/Admin/createNewPassword.php');
 
 // Login System Views //
 require_once('View/registration.php');
 require_once('View/login.php');
 require_once('View/dummyHome.php');
+require_once('View/Admin/recoverID.php');
 
 // . . .  Homepages . . . //
 // function displayHomeEditor()

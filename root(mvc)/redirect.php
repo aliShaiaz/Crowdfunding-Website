@@ -256,6 +256,44 @@ function submitGetUsername()
     echo $_SESSION['userInfo']['username'];
 }
 
+function submitRecoverID()
+{
+    VIEW_recoverID();
+    // echo 'hole';
+}
+
+function submitRecoverRequest()
+{
+    $json = json_decode($_POST['data']);
+    $user = DB_getUserInfo($json->username);
+    if ($user) {
+        // echo 'app';
+        if ($user['lastName'] == $json->lastName && $user['dob'] == $json->dob) {
+            // echo 'true';
+            echo VIEW_createNewPassword($user['username']);
+        } else {
+            echo false;
+        }
+    } else {
+        echo false;
+    }
+}
+
+function submitNewPassword()
+{
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $cPassword = $_POST['cPassword'];
+    if (REG_passwordValidation($password, $cPassword)) {
+        DB_resetPassword($username, $password);
+        header('location: redirect.php?login');
+    } else {
+        header('location: redirect.php?login');
+    }
+    // echo $username . "<br>";
+    // echo $password;
+}
+
 
 
 
@@ -273,7 +311,19 @@ if (isset($_COOKIE['session'])) {
 if (isset($_GET['login'])) {
     // If get request is for Login
     VIEW_login();
-} elseif (isset($_GET['loginSubmit'])) {
+}
+// ID Recovery //
+elseif (isset($_REQUEST['recover'])) {
+    // echo 'recovering ID';
+    submitRecoverID();
+} elseif (isset($_REQUEST['submitRecoverRequest'])) {
+    submitRecoverRequest();
+} elseif (isset($_REQUEST['submitNewPassword'])) {
+    submitNewPassword();
+}
+// . . . //
+
+elseif (isset($_GET['loginSubmit'])) {
     submitLogin();
 } elseif (isset($_REQUEST['getUsername'])) {
     submitGetUsername();
@@ -321,14 +371,15 @@ elseif (isset($_REQUEST['home'])) {
 
 elseif (isset($_REQUEST['listUsers'])) {
     submitListUsers();
-} elseif (isset($_GET['getUsersList'])) {
+} elseif (isset($_REQUEST['getUsersList'])) {
     submitGetUsersList();
+    // echo json_encode("getting users list");
 } elseif (isset($_GET['getUserInfo'])) {
     submitGetUserInfo();
 }
 // . . . View Requests . . . //
 elseif (isset($_REQUEST['viewRequests'])) {
-    echo 'here';
+    VIEW_requests();
 }
 
 

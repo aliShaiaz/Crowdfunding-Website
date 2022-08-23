@@ -9,11 +9,11 @@ body.visible {
     transition: opacity 1s;
 }
 .box{
-    background-color: white;
+    /* background-color: white; */
     width: 90%;
     margin: 200 auto;
     display: flex;
-    /* text-align: center; */
+    text-align: center;
     /* align-items: center; */
     /* align-content: center; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;

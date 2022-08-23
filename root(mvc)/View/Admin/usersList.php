@@ -11,6 +11,7 @@ function ADMIN_displayUsersList()
             Users List
         </title>
         <link rel="stylesheet" href="Asset/CSS/style.css">
+        <link rel="stylesheet" href="Asset/CSS/usersList.css">
         <script>
             function loadTableData(items) {
                 // const tableHead = document.getElementById("tHead");
@@ -80,6 +81,8 @@ function ADMIN_displayUsersList()
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let users = JSON.parse(this.responseText);
+                        // alert(this.responseText);
+                        // alert(1009);
                         if (users != "false") {
                             loadTableData(users);
                         } else {
@@ -140,9 +143,11 @@ function ADMIN_displayUsersList()
                     <tbody align="center" id="tableBody"></tbody>
                 </table>
 
-                <input class="btn" type="button" id="click" name="submit" value="Populate Table" onclick="populateTable()">
-                <!-- <input class="btn" type="submit" onclick="redirect.php?home" value="Back"> -->
-                <button class="btn" onclick="location.href='redirect.php?home'">Back</button>
+                <div>
+                    <input class="btn submitBtn" type="button" id="click" name="submit" value="Populate Table" onclick="populateTable()">
+                    <!-- <input class="btn" type="submit" onclick="redirect.php?home" value="Back"> -->
+                    <button class="btn submitBtn" onclick="location.href='redirect.php?home'">Back</button>
+                </div>
             </fieldset>
         </div>
 

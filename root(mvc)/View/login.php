@@ -44,13 +44,13 @@ function VIEW_login()
             <tr>
               <td>Username:</td>
               <td>
-                <input id="username" type="text" name="username" value="" />
+                <input class="inpTxt" id="username" type="text" name="username" value="" />
               </td>
             </tr>
             <tr>
               <td>Password:</td>
               <td>
-                <input id="password" type="password" name="password" value="" />
+                <input class="inpTxt" id="password" type="password" name="password" value="" />
               </td>
             </tr>
             <tr>
@@ -63,12 +63,12 @@ function VIEW_login()
 
           <!-- <input type="hidden" name="controlKey" value="loginSubmit" /> -->
         </form>
-        <hr />
-        <center>
-          <p style="color: red">// THIS IS TO BE IMPLEMENTED // <br /></p>
-          Forgot Username or Password? <br />
-          <button class="btn">Recover ID</button>
-        </center>
+        <hr id="bar"/>
+
+        <div id="dialogueDiv">
+          <p id="dialogue">Forgot Username or Password?</p> <br />
+          <button id="recoverBtn" class="btn" onclick="location.href='redirect.php?recover'">Recover ID</button>
+        </div>
       </fieldset>
     </div>
   </body>
