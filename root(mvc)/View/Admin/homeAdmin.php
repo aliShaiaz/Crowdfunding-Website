@@ -65,7 +65,7 @@ function VIEW_homeAdmin()
                 This is your Homepage <br />
             </h1>
 
-            <button id="viewReqBtn" class="btn" onclick="location.href='redirect.php?viewRequests'">View Requests</button>
+            <!-- <button id="viewReqBtn" class="btn" onclick="location.href='redirect.php?viewRequests'">View Requests</button> -->
 
 
             <!-- <input type="button" onclick="location.href='manageAdmin.php'" value="Manage Admin"> -->
@@ -96,6 +96,10 @@ function VIEW_homeAdmin()
                 <li>
                     <img src="Asset/Icons/edit.png" alt="" class="icon">
                     <a href="redirect.php?profileSettings">Settings</a>
+                </li>
+                <li>
+                    <img src="Asset/Icons/logout.png" alt="" class="icon">
+                    <a href="redirect.php?viewRequests">Requests</a>
                 </li>
                 <li>
                     <img src="Asset/Icons/logout.png" alt="" class="icon">

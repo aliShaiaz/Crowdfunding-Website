@@ -7,6 +7,9 @@ function VIEW_profileSettings()
 
     <head>
         <title>Profile Settings</title>
+
+        <script src="Asset/JavaScript/script.js"></script>
+
         <script>
             function fillData() {
                 requestUserInfo();
@@ -161,7 +164,8 @@ function VIEW_profileSettings()
 
             window.onload = function() {
                 fillData();
-                document.querySelector('body').classList.toggle('visible');
+                // document.querySelector('body').classList.toggle('visible');
+                runFunc();
             };
         </script>
 
@@ -213,6 +217,9 @@ function VIEW_profileSettings()
                 <!-- <button onclick="location.href = 'redirect.php?home';">Back</button> -->
             </div>
         </div>
+
+        <div id="divMenuDD" class="menuDD"></div>
+
 
 
         <script>

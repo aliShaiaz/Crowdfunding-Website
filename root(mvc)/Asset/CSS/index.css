@@ -1,22 +1,20 @@
-body{
-    background: linear-gradient(45deg, #4e65ff, #92effd);
-    opacity: 0;
-
-}
-
+/* 
 body.visible {
     opacity: 1;
     transition: opacity 1s;
-}
+} */
+@import "style.css";
+
+
+
+
+
+
 .box{
-    /* background-color: white; */
     width: 70%;
     margin: 200 auto;
-    /* display: flex; */
     text-align: center;
-    /* align-items: center; */
-    /* align-content: center; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 .box div div{   /* POSTS */

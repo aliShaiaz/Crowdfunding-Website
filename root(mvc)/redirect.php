@@ -253,7 +253,10 @@ function submitGetProfileInfo()
 
 function submitGetUsername()
 {
+    // setSessionInfo($_COOKIE['session']);
     echo $_SESSION['userInfo']['username'];
+    // echo $_COOKIE['session'];
+    // echo 100;
 }
 
 function submitRecoverID()
@@ -363,11 +366,8 @@ elseif (isset($_GET['register'])) {
 // Registration //
 
 elseif (isset($_REQUEST['home'])) {
-    // If get request is for User Home Page
-    // echo "home pressed";
-    // echo $_SESSION['userInfo']['userType'];
-    submitHome();
-    // echo 'home';
+    // submitHome();
+    displayIndex();
 } elseif (isset($_GET['logout'])) {
     // If get request is for Logout
     // echo "logout pressed";
@@ -405,7 +405,7 @@ elseif (isset($_REQUEST['viewRequests'])) {
 } elseif (isset($_REQUEST['refuse'])) {
     $reqID = $_REQUEST['refuse'];
     $req = REQ_getRequestInfo($reqID);
-    
+
     POSTS_refuse($req['postID']);
     REQ_refuse($req['postID']);
     header('location: redirect.php?viewRequests');
@@ -421,6 +421,14 @@ elseif (isset($_GET['profileSettings'])) {
     submitInfoUpdate();
 } elseif (isset($_POST['disableAccount']) || isset($_REQUEST['toggleActiveStatus'])) {
     submitToggleActiveStatus();
+}
+
+// . . . Transactions . . . //
+
+elseif (isset($_REQUEST['withdraw'])) {
+    echo 'Withdraw';
+} elseif (isset($_REQUEST['checkBalance'])) {
+    echo 'check balance';
 }
 
 

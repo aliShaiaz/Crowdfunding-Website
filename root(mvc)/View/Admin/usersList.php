@@ -10,8 +10,11 @@ function ADMIN_displayUsersList()
         <title>
             Users List
         </title>
+        <script src="Asset/JavaScript/script.js"></script>
         <link rel="stylesheet" href="Asset/CSS/style.css">
-        <link rel="stylesheet" href="Asset/CSS/usersList.css">
+        <!-- <link rel="stylesheet" href="Asset/CSS/usersList.css"> -->
+
+
         <script>
             function loadTableData(items) {
                 // const tableHead = document.getElementById("tHead");
@@ -91,11 +94,6 @@ function ADMIN_displayUsersList()
                     }
                 }
             }
-
-            window.onload = function() {
-                populateTable();
-                document.querySelector('body').classList.toggle('visible');
-            };
         </script>
 
     </head>
@@ -151,7 +149,16 @@ function ADMIN_displayUsersList()
             </fieldset>
         </div>
 
+        <div id="divMenuDD" class="menuDD"></div>
+
     </body>
+
+    <script>
+        window.onload = function() {
+            runFunc();
+            populateTable();
+        };
+    </script>
 
     </html>
 <?php }

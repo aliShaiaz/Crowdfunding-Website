@@ -28,37 +28,37 @@ function MySQL_runSQL($sql)
     }
 }
 
-function display($result)
-{
+// function display($result)
+// {
 
-    echo "<table border=1>
-            <tr>
-                <td>ID</td>
-                <td>USername</td>
-                <td>Email</td>
-            </tr>";
+//     echo "<table border=1>
+//             <tr>
+//                 <td>ID</td>
+//                 <td>USername</td>
+//                 <td>Email</td>
+//             </tr>";
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr>
-                    <td>{$row['username']}</td>
-                    <td>{$row['password']}</td>
-                    <td>{$row['userType']}</td>
-            </tr>";
-    }
+//     while ($row = mysqli_fetch_assoc($result)) {
+//         echo "<tr>
+//                     <td>{$row['username']}</td>
+//                     <td>{$row['password']}</td>
+//                     <td>{$row['userType']}</td>
+//             </tr>";
+//     }
 
-    echo "</table>";
+//     echo "</table>";
 
-    $conn = MySQL_connect();
-    $flag = true;
+//     $conn = MySQL_connect();
+//     $flag = true;
 
-    if ($conn) {
-        echo "success";
-    } else {
-        echo "DB error";
-    }
+//     if ($conn) {
+//         echo "success";
+//     } else {
+//         echo "DB error";
+//     }
 
-    $sql = "select * from users";
-    $result = mysqli_query($conn, $sql);
+//     $sql = "select * from users";
+//     $result = mysqli_query($conn, $sql);
 
-    display($result);
-}
+//     display($result);
+// }

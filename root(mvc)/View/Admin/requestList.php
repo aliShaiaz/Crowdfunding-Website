@@ -10,8 +10,10 @@ function ADMIN_displayRequestList()
         <title>
             Users List
         </title>
+        <script src="Asset/JavaScript/script.js"></script>
+
         <link rel="stylesheet" href="Asset/CSS/style.css">
-        <link rel="stylesheet" href="Asset/CSS/usersList.css">
+        <!-- <link rel="stylesheet" href="Asset/CSS/usersList.css"> -->
         <script>
             function loadTableData(items) {
 
@@ -55,7 +57,8 @@ function ADMIN_displayRequestList()
 
             window.onload = function() {
                 populateTable();
-                document.querySelector('body').classList.toggle('visible');
+                // document.querySelector('body').classList.toggle('visible');
+                runFunc();
             };
         </script>
 
@@ -85,6 +88,7 @@ function ADMIN_displayRequestList()
             </fieldset>
         </div>
 
+        <div id="divMenuDD" class="menuDD"></div>
     </body>
 
     </html>

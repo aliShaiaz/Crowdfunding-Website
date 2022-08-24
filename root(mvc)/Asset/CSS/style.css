@@ -1,5 +1,29 @@
+@import "menuDD.css";
+
+
+:root{
+    --primary-color: #dedede;
+    --secondary-color: #92effd;
+    --font-color: #555;
+
+}
+*{
+    color: var(--font-color);
+    font-family: Verdana;
+}
+
+.darkMode{
+    --primary-color: #04619f;
+    --secondary-color: #000000;
+    --menu-background-color: rgba(191, 191, 191);
+    /* --menu-background-color: rgba(191, 191, 191, 0.615); */
+    --font-color: rgb(168, 168, 168);
+
+}
+
+
 body{
-    background: linear-gradient(45deg, #4e65ff, #92effd);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); 
     opacity: 0;
     transition: opacity 1s;
 }
@@ -10,35 +34,35 @@ body.visible {
 }
 .box{
     position: relative;
-    /* background-color: white; */
     width: 90%;
     margin: auto;
-    /* display: flex; */
-    /* text-align: center; */
-    /* align-items: center; */
-    /* align-content: center; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .box * {
     margin: auto;
 }
 .btn{
-    /* display: flex; */
-    /* border: 10px solid yellow; */
     width: auto;
     background: transparent;
     margin-bottom: 5px;
     border-radius: 15px;
-    /* text-align: center; */
-    
 }
 
 .inpTxt {
     border-radius: 15px;
-
 }
 
-/* JS */
+
+
+
+
+/* ON TEST STUFFS!! */
+fieldset{
+    text-align: center;
+}
+/*  */
+
+
+/* -- JS NOTES -- */
 /* window.onload = function() {
     document.querySelector('body').classList.toggle('visible');
 }; */

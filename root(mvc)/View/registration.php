@@ -325,82 +325,88 @@ function VIEW_Registration()            // ... Investor's Registration Form
                     <tr>
                         <td colspan="2" align="center">
                             <hr>
-                            <input type="submit" onclick="return empty()">
+                            <input class="btn" type="submit" onclick="return empty()">
                         </td>
                     </tr>
                 `;
                 } else {
-                    table.innerHTML = '<td colspan="2" align="center"><input type="button" value="Next"></td>';
+                    table.innerHTML = '<td colspan="2" align="center"><input class="btn" type="button" value="Next"></td>';
                     alert("Please select a Registration Category First!")
                 }
             }
         </script>
-
+        <link rel="stylesheet" href="Asset/CSS/style.css">
+        <link rel="stylesheet" href="Asset/CSS/registration.css">
     </head>
 
     <body>
 
-        <form method="post" action="redirect.php?regSubmit" enctype="multipart/form-data">
-            <fieldset style="float:inline-start">
-                <legend>Registration</legend>
-                <table>
-                    <tr>
-                        <td>
-                            Profile Photo:
-                        </td>
-                        <td>
-                            <input type="file" name="profilePhoto">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Username:
-                        </td>
-                        <td>
-                            <input id="username" type="text" name="username" value="" onblur="isAvailable()">
-                            <span id="usernameSpan"></span>
-                        </td>
-                        <!-- <td id="usernameSpan"></td> -->
-                    </tr>
-                    <tr>
-                        <td>
-                            Password:
-                        </td>
-                        <td>
-                            <input id="password" type="password" name="password" value=""><br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Confirm Password:
-                        </td>
-                        <td>
-                            <input id="confirmPassword" type="password" name="confirmPassword" value=""><br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="userType">Are you an:</label>
-                        </td>
-                        <td>
-                            <select name="userType" id="userType" onblur="loadForm()">
-                                <option value="">Choose Your Category</option>
-                                <option value="org">Organization</option>
-                                <option value="indiv">Individual</option>
-                                <option value="inv">Investor</option>
-                                <option value="official">Official</option>
-                            </select>
-                            <tbody id="btnBody"></tbody>
-                        </td>
-                    </tr>
-                    <tbody id="tableBody"></tbody>
-                </table>
-            </fieldset>
-        </form>
+        <div id="mainDiv" class="box">
+            <form method="post" action="redirect.php?regSubmit" enctype="multipart/form-data">
+                <!-- <fieldset style="float:inline-start"> -->
+                <fieldset>
+                    <legend>Registration</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                Profile Photo:
+                            </td>
+                            <td>
+                                <input type="file" name="profilePhoto">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Username:
+                            </td>
+                            <td>
+                                <input id="username" type="text" name="username" value="" onblur="isAvailable()">
+                                <span id="usernameSpan"></span>
+                            </td>
+                            <!-- <td id="usernameSpan"></td> -->
+                        </tr>
+                        <tr>
+                            <td>
+                                Password:
+                            </td>
+                            <td>
+                                <input id="password" type="password" name="password" value=""><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Confirm Password:
+                            </td>
+                            <td>
+                                <input id="confirmPassword" type="password" name="confirmPassword" value=""><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="userType">Are you an:</label>
+                            </td>
+                            <td>
+                                <select name="userType" id="userType" onblur="loadForm()">
+                                    <option value="">Choose Your Category</option>
+                                    <option value="org">Organization</option>
+                                    <option value="indiv">Individual</option>
+                                    <option value="inv">Investor</option>
+                                    <option value="official">Official</option>
+                                </select>
+                                <!-- <tbody id="btnBody"></tbody> -->
+                            </td>
+                        </tr>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
 
         <script>
             window.onload = function() {
-                document.getElementById('tableBody').innerHTML = '<td colspan="2" align="center"><input type="button" value="Next"></td>';
+                document.getElementById('tableBody').innerHTML = '<td colspan="2" align="center"><input class="btn" type="button" value="Next"></td>';
+                document.querySelector('body').classList.toggle('visible');
+
             }
         </script>
     </body>

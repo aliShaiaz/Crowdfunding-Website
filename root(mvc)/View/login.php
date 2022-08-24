@@ -63,7 +63,7 @@ function VIEW_login()
 
           <!-- <input type="hidden" name="controlKey" value="loginSubmit" /> -->
         </form>
-        <hr id="bar"/>
+        <hr id="bar" />
 
         <div id="dialogueDiv">
           <p id="dialogue">Forgot Username or Password?</p> <br />
@@ -72,6 +72,11 @@ function VIEW_login()
       </fieldset>
     </div>
   </body>
+  <script>
+    window.onload = function() {
+      document.querySelector('body').classList.toggle('visible');
+    };
+  </script>
 
   </html>
 
