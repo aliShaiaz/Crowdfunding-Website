@@ -24,7 +24,7 @@ function LS_checkRegistrationBK()
                 // .. //
 
                 // ... Generating ID ... //
-                $currentUserCount = DB_getUserCount();
+                $currentUserCount = USER_getUserCount();
                 if ($userType == 'indiv') {
                     $userID = 'IND-' . str_pad($currentUserCount + 1, 5, '0', STR_PAD_LEFT);
                 } elseif ($userType == 'inv') {
@@ -47,7 +47,7 @@ function LS_checkRegistrationBK()
                 $tradeLicense = $_POST['tradeLicense'];
 
                 // ... Generating ID ... //
-                $currentUserCount = DB_getUserCount();
+                $currentUserCount = USER_getUserCount();
                 $userID = 'ORG-' . str_pad($currentUserCount + 1, 5, '0', STR_PAD_LEFT);
                 // ... //
 
@@ -75,7 +75,7 @@ function LS_checkRegistrationBK()
                 // .. //
 
                 // ... Generating ID ... //
-                $currentUserCount = DB_getUserCount();
+                $currentUserCount = USER_getUserCount();
                 if ($_POST['role'] == 'admin') {
                     $userID = 'ADM-' . str_pad($currentUserCount + 1, 5, '0', STR_PAD_LEFT);
                     $userType = 'admin';
@@ -228,7 +228,7 @@ function LS_checkRegistration()
                     // .. //
 
                     // ... Generating ID ... //
-                    $currentUserCount = DB_getUserCount();
+                    $currentUserCount = USER_getUserCount();
                     if ($userType == 'indiv') {
                         $userID = 'IND-' . str_pad($currentUserCount + 1, 5, '0', STR_PAD_LEFT);
                     } elseif ($userType == 'inv') {
@@ -250,7 +250,7 @@ function LS_checkRegistration()
                 $tradeLicense = $_POST['tradeLicense'];
 
                 // ... Generating ID ... //
-                $currentUserCount = DB_getUserCount();
+                $currentUserCount = USER_getUserCount();
                 $userID = 'ORG-' . str_pad($currentUserCount + 1, 5, '0', STR_PAD_LEFT);
                 // ... //
 
@@ -280,7 +280,7 @@ function LS_checkRegistration()
                     // .. //
 
                     // ... Generating ID ... //
-                    $currentUserCount = DB_getUserCount();
+                    $currentUserCount = USER_getUserCount();
                     if ($_POST['role'] == 'admin') {
                         $userID = 'ADM-' . str_pad($currentUserCount + 1, 5, '0', STR_PAD_LEFT);
                         $userType = 'admin';
@@ -321,7 +321,7 @@ function LS_checkRegistration()
     //     // .. //
 
     //     // ... Generating ID ... //
-    //     $currentUserCount = DB_getUserCount();
+    //     $currentUserCount = USER_getUserCount();
     //     if ($userType == 'indiv') {
     //         $userID = 'IND-' . str_pad($currentUserCount + 1, 5, '0', STR_PAD_LEFT);
     //     } elseif ($userType == 'inv') {
@@ -344,7 +344,7 @@ function LS_checkRegistration()
     //     $tradeLicense = $_POST['tradeLicense'];
 
     //     // ... Generating ID ... //
-    //     $currentUserCount = DB_getUserCount();
+    //     $currentUserCount = USER_getUserCount();
     //     $userID = 'ORG-' . str_pad($currentUserCount + 1, 5, '0', STR_PAD_LEFT);
     //     // ... //
 
@@ -372,7 +372,7 @@ function LS_checkRegistration()
     //     // .. //
 
     //     // ... Generating ID ... //
-    //     $currentUserCount = DB_getUserCount();
+    //     $currentUserCount = USER_getUserCount();
     //     if ($_POST['role'] == 'admin') {
     //         $userID = 'ADM-' . str_pad($currentUserCount + 1, 5, '0', STR_PAD_LEFT);
     //         $userType = 'admin';

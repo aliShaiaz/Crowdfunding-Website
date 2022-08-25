@@ -14,8 +14,46 @@
         xhttp.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
             __username = this.responseText;
+            // alert(this.responseText);
           }
         };
+      }      
+      function displayBalance() {
+        let balance = document.getElementById('balance')
+        let balanceBtn = document.getElementById('balanceBtn')
+
+        if (balance.classList.contains('listHide')){
+          let xhttp = new XMLHttpRequest();
+          xhttp.open("GET", "redirect.php?getBalance");
+          xhttp.setRequestHeader(
+            "Content-type",
+            "application/x-www-form-urlencoded"
+          );
+          xhttp.send();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              let blnce = this.responseText;
+  
+              // alert(balance);
+  
+              if(blnce!=false){
+                setTimeout(() => {
+                // let balance = document.getElementById('balance')
+                // let balanceBtn = document.getElementById('balanceBtn')
+                balance.innerHTML = blnce + " BDT.";
+                balanceBtn.classList.toggle("listHide");
+                balance.classList.toggle("listHide");
+                // balanceBtn.classList.toggle("listHide");
+                setTimeout(() => {
+                  balance.classList.toggle("listHide");
+                  balanceBtn.classList.toggle("listHide");
+                }, 3000); 
+                }, 1000);
+              }
+            }
+        }
+        
+        }
       }      
 
       function checkCookie(cookieName) {
@@ -42,6 +80,23 @@
                 `.png" />
                   `;
             document.getElementById("userMenu").innerHTML = `
+                      <li style="width: 150px; padding-top: 30px;">
+                          <img src="Asset/Icons/index.png" alt="" class="icon">
+                          <a href="redirect.php?index">Index</a>
+                      </li>                      
+                      <li style="width: 150px;">
+                          <img src="Asset/Icons/createAccount.png" alt="" class="icon">
+                          <a href="redirect.php?createAccount">Create Account</a>
+                      </li>
+                      <li style="width: 150px;">
+                          <img src="Asset/Icons/getBalance.png" alt="" class="icon">
+                          <a id="balanceBtn" onClick="displayBalance()" class="">Check Balance</a>
+                          <a id="balance" class="listHide"></a>
+                      </li>
+                      <li>
+                          <img src="Asset/Icons/withdraw.png" alt="" class="icon">
+                          <a href="redirect.php?withdraw">Wthdrw/Trnsfr</a>
+                      </li>
                       <li>
                           <img src="Asset/Icons/usersList.png" alt="" class="icon">
                           <a href="redirect.php?listUsers">List Users</a>
@@ -53,10 +108,6 @@
                       <li>
                           <img src="Asset/Icons/requests.png" alt="" class="icon">
                           <a href="redirect.php?viewRequests">Requests</a>
-                      </li>
-                      <li>
-                          <img src="Asset/Icons/withdraw.png" alt="" class="icon">
-                          <a href="redirect.php?withdraw">Withdraw</a>
                       </li>
                       <li style="width: 130px;" id="modeToggleButton">
                       </li>
@@ -174,6 +225,7 @@
         writeMenuDD();
         menuDD();
         menuDD_Fill();
+        // displayBalance();
         // alert(__username);
       }
       

@@ -145,8 +145,10 @@ function submitUpdateUser()
 function submitGetUserInfo()
 {
     if (FUNCTIONS_checkAdmin()) {
-        // working here
-        echo json_encode(DB_getUserInfo($_REQUEST['getUserInfo']));
+        echo  "working here";
+        // echo json_encode(DB_getUserInfo($_REQUEST['getUserInfo']));
+
+
         // echo $_REQUEST['getUserInfo'];
         // echo json_encode(DB_getUserInfo($_REQUEST['username']));
         // if ($_REQUEST['getUserInfo'] == "") {
@@ -236,7 +238,7 @@ function submitToggleActiveStatus()
     }
     // echo $activeStatus;
 
-    DB_updateActiveStatus($user['username'], $activeStatus);
+    USER_updateActiveStatus($user['username'], $activeStatus);
 
     if ($user['username'] == $_SESSION['userInfo']['username']) {
         logout();
@@ -426,9 +428,123 @@ elseif (isset($_GET['profileSettings'])) {
 // . . . Transactions . . . //
 
 elseif (isset($_REQUEST['withdraw'])) {
-    echo 'Withdraw';
-} elseif (isset($_REQUEST['checkBalance'])) {
-    echo 'check balance';
+    // echo 'Withdraw';
+
+    VIEW_transaction();
+} elseif (isset($_REQUEST['getBalance'])) {
+    echo F_getAccountBalance(DB_getUserInfo($_SESSION['userInfo']['username'])['accountID']);
+} elseif (isset($_REQUEST['createAccount'])) {
+    if ($_SESSION['userInfo']['username'] == null) {
+        USER_addAccount($_SESSION['userInfo']['username'], F_createAccount($username));
+        header('location: redirect.php?index');
+    } else {
+        FUNCTIONS_notifyFailedAttemt("You already have an Account!!", 'redirect.php?index');
+    }
+} elseif (isset($_REQUEST['submitTransferRequest'])) {
+    // recipientAccountID recipientUsername senderPassword transferAmount recipientType
+
+    $request = json_decode($_POST['data']);
+
+    $amount = intval($request->transferAmount);
+
+
+    // . . . CHECKLIST . . . //
+    // @ SENDER @
+    // Password check
+    // Account check
+    // Balance check
+
+    // @ RECEIVER @
+    // is valid username
+    // has account
+
+    // @ ACCOUNT @
+    // account exits
+
+    $clearence = true;
+
+    $sender = [];
+    $receiver = [];
+    $resp = [];
+    $resp['status'] = '';
+
+
+    if ($amount != 0 && $amount >= 100 & $amount <= 10000) {
+        // @ SENDER @
+        // password, account, balance
+        if ($_SESSION['userInfo']['password'] != $request->senderPassword) {
+            $resp['issue'] = "Incorrect Password!";
+            $clearence = false;
+        } else {
+
+            $sender['accountID'] = USER_getAccountID($_SESSION['userInfo']['username']);
+            if ($sender['accountID'] == null) {
+                $resp['issue'] = "Sender Doesn't have an Account!";
+                $clearence = false;
+            } else {
+                $balance = F_getAccountBalance($sender['accountID']);
+                if ($amount > $balance) {
+                    $resp['issue'] = "Sender Doesn't sufficient Balance!";
+                    $clearence = false;
+                }
+            }
+        }
+
+
+        if ($request->recipientType == 'user') {
+            // @ RECEIVER @
+            // is valid username
+            // has account
+            $receiver['username'] = $request->recipientUsername;
+            if (!DB_getUserInfo($receiver['username'])) {
+                $resp['issue'] = "Incorrect Username!";
+                $clearence = false;
+            } else {
+                $receiver['accountID'] = USER_getAccountID($receiver['username']);
+                if (!$receiver['accountID']) {
+                    $resp['issue'] = "Receiver Doesn't have an Account!!";
+                    $clearence = false;
+                }
+            }
+        } elseif ($request->recipientType == 'account') {
+            // @ ACCOUNT @
+            // account exits
+            $receiver['accountID'] = $request->recipientAccountID;
+            if (!F_getAccountInfo($receiver['accountID'])) {
+                $resp['issue'] = "The account doesn't exit!!";
+                $clearence = false;
+            }
+        }
+        if ($request->recipientType == 'withdraw') {
+        }
+    } else {
+        $resp['issue'] = "Amount has to be at least 100 BDT.!";
+        $clearence = false;
+    }
+
+
+
+    if ($clearence) {
+        $resp['trxID'] = F_transfer($sender['accountID'], $receiver['accountID'], $amount);
+        $resp['status'] = 'success';
+    }
+
+
+
+
+
+
+
+
+
+
+
+    echo json_encode($resp);
+    // echo 100;
+
+    // getAccountID
+    // $resp['status'] = 'success';
+
 }
 
 
@@ -438,4 +554,13 @@ elseif (isset($_REQUEST['withdraw'])) {
 // . . . If nothing, display Index . . . //
 else {
     displayIndex();
+    // if (USER_getAccountID('person1') == null) {
+    //     echo 'null';
+    // }
+
+    // if (DB_getUserInfo('admin')) {
+    //     echo 'true';
+    // } else {
+    //     echo 'false';
+    // }
 }

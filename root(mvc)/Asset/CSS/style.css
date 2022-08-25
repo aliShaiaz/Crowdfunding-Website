@@ -12,6 +12,14 @@
     font-family: Verdana;
 }
 
+
+.listHide{
+    opacity: 0;
+    transition: opacity .5s;
+    display: none;
+
+}
+
 .darkMode{
     --primary-color: #04619f;
     --secondary-color: #000000;
@@ -52,6 +60,11 @@ body.visible {
 }
 
 
+/* Transaction.php */
+
+select {
+    background: transparent;
+}
 
 
 

@@ -10,6 +10,7 @@ require_once('View/Admin/updateUser.php');
 require_once('View/Admin/viewRequests.php');
 require_once('View/Admin/createNewPassword.php');
 require_once('View/Admin/requestList.php');
+require_once('View/Admin/transaction.php');
 
 // Login System Views //
 require_once('View/registration.php');

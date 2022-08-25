@@ -1,16 +1,19 @@
 :root{
     --menu-primary-color: #555;
     --menu-background-color: #fff;
-    --menu-active-height: 300px;
+    --items: 2;
+    --items-active: 9;
+    --height-per-item: 55px;
     --menu-active-width: 220px;
+
 
 }
 
 .signedIn{
-    --menu-active-height: 400px;
+    --menu-active-height: calc(calc(var(--items-active) * var(--height-per-item)) + 60px)
 }
 .notSignedIn{
-    --menu-active-height: 200px;
+    --menu-active-height: calc(calc(var(--items) * var(--height-per-item)) + 75px)
 }
 
 .menuDD {
@@ -49,6 +52,9 @@
 }
 .menuDD.active .userBx{
     width: calc(100% - 60px);
+    /* border-bottom: 1px solid rgba(0,0,0,0.1); */
+    /* margin-bottom: 30px; */
+    
     /* transition: width .5s; */
     /* display: flex; */
     /* width: 120px; */
@@ -145,6 +151,7 @@
     transition: opacity .5s;
 }
 .menuDD.active .menu{
+    /* margin-top: 15px; */
     opacity: 1;
     transition: .75s;
     transition-delay: .5s;
@@ -155,8 +162,10 @@
     align-items: center;
     gap: 10px;
     width: 50%;
+    /* height: 20px; */
     margin-left: 25px;
-    margin: 30px;
+    /* margin: 30px; */
+    padding: 15px;
     
 }
 .menu li a{

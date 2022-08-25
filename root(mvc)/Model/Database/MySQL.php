@@ -24,7 +24,8 @@ function MySQL_runSQL($sql)
         }
         return $result;
     } else {
-        return true;
+        return $conn;
+        // return true;
     }
 }
 

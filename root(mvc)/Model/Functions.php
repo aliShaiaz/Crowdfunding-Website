@@ -63,21 +63,30 @@ function isSignedIn()
 }
 
 
+function FUNCTIONS_notifyFailedAttemt($message, $header)
+{
+    // This function will return failed attempt response to the user and redirect ot index //
+?>
+    <html>
 
+    <head>
+        <title>ERROR!!</title>
+        <link rel="stylesheet" href="Asset/CSS/index.css" />
+        <meta http-equiv="refresh" content="0;url=<?php echo $header; ?>" />
+        <script>
+            alert("<?php echo $message; ?>"+". Redirecting you to "+ "<?php 
+            $message = explode('?',$header);
+            echo ucfirst($message[1]); ?>");
+        </script>
+    </head>
 
+    <!-- <body>
+        <div class="box" style="opactiy:1;">
+            Redirecting You!!
+        </div>
+    </body> -->
 
-// function notSignedIn()
-// {
-//     if (!isset($_COOKIE['loginStatus'])) {
-//         return true;
-//     } else {
-//         echo "
-//         <meta http-equiv = \"refresh\" content = \"2; url = ../homepage/homepage.php\" />
-//             <h1 align=\"center\">
-//                 <b>Redirecting you to your Homepage!</b>
-//             </h1>
-//         <script>
-//             alert(\"You are already signed in! You will be redirected to homepage shortly!\");
-//         </script>";
-//     }
-// }
+    </html>
+
+<?php
+}
