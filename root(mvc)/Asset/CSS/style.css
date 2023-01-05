@@ -1,79 +1,74 @@
 @import "menuDD.css";
 
-
-:root{
-    --primary-color: #dedede;
-    --secondary-color: #92effd;
-    --font-color: #555;
-
+:root {
+  --primary-color: #dedede;
+  --secondary-color: #92effd;
+  --font-color: #555;
 }
-*{
-    color: var(--font-color);
-    font-family: Verdana;
+* {
+  color: var(--font-color);
+  font-family: Verdana;
 }
 
-
-.listHide{
-    opacity: 0;
-    transition: opacity .5s;
-    display: none;
-
+.listHide {
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
 }
 
-.darkMode{
-    --primary-color: #04619f;
-    --secondary-color: #000000;
-    --menu-background-color: rgba(191, 191, 191);
-    /* --menu-background-color: rgba(191, 191, 191, 0.615); */
-    --font-color: rgb(168, 168, 168);
-
+.darkMode {
+  --primary-color: #04619f;
+  /* --primary-color: yellow; */
+  --secondary-color: #000000;
+  --menu-background-color: rgba(191, 191, 191);
+  /* --menu-background-color: rgba(191, 191, 191, 0.615); */
+  --font-color: rgb(168, 168, 168);
 }
 
-
-body{
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); 
-    opacity: 0;
-    transition: opacity 1s;
+body {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 body.visible {
-    opacity: 1;
-    transition: opacity 1s;
+  opacity: 1;
+  transition: opacity 1s;
 }
-.box{
-    position: relative;
-    width: 90%;
-    margin: auto;
+.box {
+  position: relative;
+  width: 90%;
+  margin: auto;
 }
 .box * {
-    margin: auto;
+  margin: auto;
 }
-.btn{
-    width: auto;
-    background: transparent;
-    margin-bottom: 5px;
-    border-radius: 15px;
+.btn {
+  width: auto;
+  background: transparent;
+  margin-bottom: 5px;
+  border-radius: 15px;
 }
 
 .inpTxt {
-    border-radius: 15px;
+  border-radius: 15px;
 }
-
 
 /* Transaction.php */
 
 select {
-    background: transparent;
+  background: transparent;
 }
-
-
 
 /* ON TEST STUFFS!! */
-fieldset{
-    text-align: center;
+fieldset {
+  text-align: center;
 }
 /*  */
-
 
 /* -- JS NOTES -- */
 /* window.onload = function() {

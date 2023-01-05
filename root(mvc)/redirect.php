@@ -50,7 +50,6 @@ function submitLogin()
 function submitLogout()
 {
     logout();
-    // SESSION_removeUserSession($_SESSION['userInfo'][0]);
 }
 
 function submitNewReg()
@@ -75,15 +74,6 @@ function submitRegister()
 
 function submitCheckUsername()
 {
-
-    // $json = $_POST['username'];
-    // $user = json_decode($json);
-    // print_r($user->username);
-    // if (DB_usernameIsAvailable($username)) {
-    //     echo true;
-    // } else {
-    //     echo false;
-    // }
     echo DB_usernameIsAvailable(strtolower($_POST['username']));
     // if (isset($_POST['username'])) {
     //     echo 100;
@@ -379,6 +369,7 @@ elseif (isset($_REQUEST['home'])) {
 } elseif (isset($_GET['checkUsername'])) {
     submitCheckUsername();
 }
+
 
 // Admin Requests //
 

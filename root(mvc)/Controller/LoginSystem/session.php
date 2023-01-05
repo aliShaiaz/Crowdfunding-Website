@@ -10,6 +10,8 @@ function getSessionIDHash($len = 32)
     }
 }
 
+
+
 function SESSION_createSession($userID, $username, $password, $userType)
 {
     DB_removeSession($username);

@@ -1,2 +1,0 @@
-<?php
-SESSION_getSessionInfo
